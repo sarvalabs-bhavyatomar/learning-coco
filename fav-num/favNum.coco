@@ -1,0 +1,16 @@
+coco FavNum
+
+state persistent:
+    nameToNums Map[String]U64
+
+endpoint deployer Init!():
+    pass
+
+endpoint invokable AddFavNum!(username String, favNum U64):
+    mutate nameToNums <- FavNum.State.nameToNums:
+        nameToNums[username] = favNum
+
+endpoint invokable GetFavNum(username String) -> (favNum U64):
+    observe favNums <- FavNum.State.nameToNums:
+        yield favNum favNums[username]
+    

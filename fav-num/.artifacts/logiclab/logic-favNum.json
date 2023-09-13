@@ -1,0 +1,229 @@
+{
+	"Name": "favNum",
+	"Ready": true,
+	"Manifest": {
+		"syntax": "0.1.0",
+		"engine": {
+			"kind": "PISA",
+			"flags": []
+		},
+		"elements": [
+			{
+				"ptr": 0,
+				"deps": null,
+				"kind": "typedef",
+				"data": "map[string]u64"
+			},
+			{
+				"ptr": 1,
+				"deps": null,
+				"kind": "state",
+				"data": {
+					"kind": "persistent",
+					"fields": [
+						{
+							"slot": 0,
+							"label": "nameToNums",
+							"type": "map[string]u64"
+						}
+					]
+				}
+			},
+			{
+				"ptr": 2,
+				"deps": [
+					1
+				],
+				"kind": "routine",
+				"data": {
+					"name": "Init!",
+					"kind": "deployer",
+					"accepts": [],
+					"returns": [],
+					"executes": {
+						"bin": [],
+						"hex": "",
+						"asm": null
+					},
+					"catches": null
+				}
+			},
+			{
+				"ptr": 3,
+				"deps": [
+					1
+				],
+				"kind": "routine",
+				"data": {
+					"name": "AddFavNum!",
+					"kind": "invokable",
+					"accepts": [
+						{
+							"slot": 0,
+							"label": "username",
+							"type": "string"
+						},
+						{
+							"slot": 1,
+							"label": "favNum",
+							"type": "u64"
+						}
+					],
+					"returns": [],
+					"executes": {
+						"bin": [
+							128,
+							0,
+							0,
+							4,
+							1,
+							1,
+							4,
+							2,
+							0,
+							84,
+							0,
+							2,
+							1,
+							129,
+							0,
+							0
+						],
+						"hex": "",
+						"asm": null
+					},
+					"catches": null
+				}
+			},
+			{
+				"ptr": 4,
+				"deps": [
+					1
+				],
+				"kind": "routine",
+				"data": {
+					"name": "GetFavNum",
+					"kind": "invokable",
+					"accepts": [
+						{
+							"slot": 0,
+							"label": "username",
+							"type": "string"
+						}
+					],
+					"returns": [
+						{
+							"slot": 0,
+							"label": "favNum",
+							"type": "u64"
+						}
+					],
+					"executes": {
+						"bin": [
+							128,
+							0,
+							0,
+							4,
+							1,
+							0,
+							83,
+							0,
+							0,
+							1,
+							5,
+							0,
+							0
+						],
+						"hex": "",
+						"asm": null
+					},
+					"catches": null
+				}
+			}
+		]
+	},
+	"Object": {
+		"ID": "0x080000748e09137565b9ea157958bff551b24a77babd2da29f7b6b6bcb3de5802a3ab9",
+		"EngineKind": "PISA",
+		"ManifestHash": "0xaae7bd38e305b6f0977bd862c486c419ccb0205ae0d1a8026c70e177f5023e7e",
+		"Sealed": false,
+		"AssetLogic": false,
+		"Interactive": false,
+		"StateMatrix": {
+			"0": 1
+		},
+		"Dependencies": {
+			"0": [],
+			"1": [],
+			"2": [
+				1
+			],
+			"3": [
+				1
+			],
+			"4": [
+				1
+			]
+		},
+		"Elements": {
+			"0": {
+				"Kind": "typedef",
+				"Deps": null,
+				"Data": "Dj8DEy4DAy8DAwU="
+			},
+			"1": {
+				"Kind": "state",
+				"Deps": null,
+				"Data": "Dj8GrgFuYW1lVG9OdW1zPwMTLgMDLwMDBQ=="
+			},
+			"2": {
+				"Kind": "routine",
+				"Deps": [
+					1
+				],
+				"Data": "Do8BDjaDAZYBkAIvAABJbml0IQJkZXBsb3llcg=="
+			},
+			"3": {
+				"Kind": "routine",
+				"Deps": [
+					1
+				],
+				"Data": "Dp8BDqYEwwXWBe4GPw7gA38GjgHGAa4CdXNlcm5hbWUvAwMDZmF2TnVtLwMDBUFkZEZhdk51bSEDaW52b2thYmxljwEObs4BrgKeAy8DFoAAAC8DFgQBAS8DFgQCAC8DFlQAAgEvAxaBAAA="
+			},
+			"4": {
+				"Kind": "routine",
+				"Deps": [
+					1
+				],
+				"Data": "Dp8BDpYEowW2Bc4GPw6OAj8GjgF1c2VybmFtZS8DAwMvBm5mYXZOdW0vAwMFR2V0RmF2TnVtBGludm9rYWJsZW8Obs4BvgIvAxaAAAAvAxYEAQAvAxZTAAABLwMWBQAA"
+			}
+		},
+		"Callsites": {
+			"AddFavNum!": {
+				"Ptr": 3,
+				"Kind": "invokable"
+			},
+			"GetFavNum": {
+				"Ptr": 4,
+				"Kind": "invokable"
+			},
+			"Init!": {
+				"Ptr": 2,
+				"Kind": "deployer"
+			}
+		},
+		"Classdefs": {}
+	},
+	"CtxState": {
+		"Address": "0x748e09137565b9ea157958bff551b24a77babd2da29f7b6b6bcb3de5802a3ab9",
+		"Datastore": {},
+		"LogicState": {
+			"080000748e09137565b9ea157958bff551b24a77babd2da29f7b6b6bcb3de5802a3ab9": {
+				"03170a2e7597b7b7e3d84c05391d139a62b157e78786d8c082f29dcf4c111314": "Dm8GY4YB0wFiaGF2eWEBpHBhd2FuBw=="
+			}
+		},
+		"Spendable": {},
+		"Approvals": {},
+		"Lockups": {}
+	}
+}

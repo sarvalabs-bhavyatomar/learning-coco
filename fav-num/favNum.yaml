@@ -1,0 +1,90 @@
+syntax: 0.1.0
+engine:
+  kind: PISA
+  flags: []
+elements:
+- ptr: 0
+  kind: typedef
+  data: map[string]u64
+- ptr: 1
+  kind: state
+  data:
+    kind: persistent
+    fields:
+    - slot: 0
+      label: nameToNums
+      type: map[string]u64
+- ptr: 2
+  deps:
+  - 1
+  kind: routine
+  data:
+    name: Init!
+    kind: deployer
+    accepts: []
+    returns: []
+    executes:
+      bin: []
+- ptr: 3
+  deps:
+  - 1
+  kind: routine
+  data:
+    name: AddFavNum!
+    kind: invokable
+    accepts:
+    - slot: 0
+      label: username
+      type: string
+    - slot: 1
+      label: favNum
+      type: u64
+    returns: []
+    executes:
+      bin:
+      - 128
+      - 0
+      - 0
+      - 4
+      - 1
+      - 1
+      - 4
+      - 2
+      - 0
+      - 84
+      - 0
+      - 2
+      - 1
+      - 129
+      - 0
+      - 0
+- ptr: 4
+  deps:
+  - 1
+  kind: routine
+  data:
+    name: GetFavNum
+    kind: invokable
+    accepts:
+    - slot: 0
+      label: username
+      type: string
+    returns:
+    - slot: 0
+      label: favNum
+      type: u64
+    executes:
+      bin:
+      - 128
+      - 0
+      - 0
+      - 4
+      - 1
+      - 0
+      - 83
+      - 0
+      - 0
+      - 1
+      - 5
+      - 0
+      - 0
