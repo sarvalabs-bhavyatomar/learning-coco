@@ -1,0 +1,352 @@
+{
+	"Name": "Orgs",
+	"Ready": true,
+	"Manifest": {
+		"syntax": "0.1.0",
+		"engine": {
+			"kind": "PISA",
+			"flags": []
+		},
+		"elements": [
+			{
+				"ptr": 0,
+				"deps": [
+					1
+				],
+				"kind": "typedef",
+				"data": "map[string]Org"
+			},
+			{
+				"ptr": 1,
+				"deps": null,
+				"kind": "class",
+				"data": {
+					"name": "Org",
+					"fields": [
+						{
+							"slot": 0,
+							"label": "name",
+							"type": "string"
+						},
+						{
+							"slot": 1,
+							"label": "id",
+							"type": "string"
+						}
+					],
+					"methods": []
+				}
+			},
+			{
+				"ptr": 2,
+				"deps": [
+					1
+				],
+				"kind": "state",
+				"data": {
+					"kind": "persistent",
+					"fields": [
+						{
+							"slot": 0,
+							"label": "orgIdToOrg",
+							"type": "map[string]Org"
+						}
+					]
+				}
+			},
+			{
+				"ptr": 3,
+				"deps": [
+					2
+				],
+				"kind": "routine",
+				"data": {
+					"name": "Init!",
+					"kind": "deployer",
+					"accepts": [],
+					"returns": [],
+					"executes": {
+						"bin": [],
+						"hex": "",
+						"asm": null
+					},
+					"catches": null
+				}
+			},
+			{
+				"ptr": 4,
+				"deps": [
+					2
+				],
+				"kind": "routine",
+				"data": {
+					"name": "AddOrg!",
+					"kind": "invokable",
+					"accepts": [
+						{
+							"slot": 0,
+							"label": "orgName",
+							"type": "string"
+						},
+						{
+							"slot": 1,
+							"label": "orgId",
+							"type": "string"
+						}
+					],
+					"returns": [],
+					"executes": {
+						"bin": [
+							17,
+							0,
+							1,
+							40,
+							0,
+							0,
+							4,
+							1,
+							0,
+							82,
+							0,
+							0,
+							1,
+							4,
+							1,
+							1,
+							36,
+							2,
+							1,
+							82,
+							0,
+							1,
+							2,
+							128,
+							2,
+							0,
+							84,
+							2,
+							1,
+							0,
+							129,
+							2,
+							0
+						],
+						"hex": "",
+						"asm": null
+					},
+					"catches": null
+				}
+			},
+			{
+				"ptr": 5,
+				"deps": [
+					2
+				],
+				"kind": "routine",
+				"data": {
+					"name": "GetOrgName",
+					"kind": "invokable",
+					"accepts": [
+						{
+							"slot": 0,
+							"label": "orgId",
+							"type": "string"
+						}
+					],
+					"returns": [
+						{
+							"slot": 0,
+							"label": "orgName",
+							"type": "string"
+						}
+					],
+					"executes": {
+						"bin": [
+							128,
+							0,
+							0,
+							4,
+							1,
+							0,
+							83,
+							0,
+							0,
+							1,
+							81,
+							0,
+							0,
+							0,
+							5,
+							0,
+							0
+						],
+						"hex": "",
+						"asm": null
+					},
+					"catches": null
+				}
+			},
+			{
+				"ptr": 6,
+				"deps": [
+					2
+				],
+				"kind": "routine",
+				"data": {
+					"name": "GetOrgById",
+					"kind": "invokable",
+					"accepts": [
+						{
+							"slot": 0,
+							"label": "orgId",
+							"type": "string"
+						}
+					],
+					"returns": [
+						{
+							"slot": 0,
+							"label": "orgName",
+							"type": "Org"
+						}
+					],
+					"executes": {
+						"bin": [
+							128,
+							0,
+							0,
+							4,
+							1,
+							0,
+							83,
+							0,
+							0,
+							1,
+							5,
+							0,
+							0
+						],
+						"hex": "",
+						"asm": null
+					},
+					"catches": null
+				}
+			}
+		]
+	},
+	"Object": {
+		"ID": "0x0800003f58cf1bd5706f082df7a07e53f4f08ab8a59817fb1fb4b023df4cf80b555521",
+		"EngineKind": "PISA",
+		"ManifestHash": "0x50abf6c63ab8f2358557221d0aa2b6cfee3d8320cf6e1949e6ecbf04ad2b6b86",
+		"Sealed": false,
+		"AssetLogic": false,
+		"Interactive": false,
+		"StateMatrix": {
+			"0": 2
+		},
+		"Dependencies": {
+			"0": [
+				1
+			],
+			"1": [],
+			"2": [
+				1
+			],
+			"3": [
+				2
+			],
+			"4": [
+				2
+			],
+			"5": [
+				2
+			],
+			"6": [
+				2
+			]
+		},
+		"Elements": {
+			"0": {
+				"Kind": "typedef",
+				"Deps": [
+					1
+				],
+				"Data": "Dj8DEy4DA18DFk6eAwVPcmdvBk6GAa4BbmFtZS8DAwNpZC8DAwMP"
+			},
+			"1": {
+				"Kind": "class",
+				"Deps": null,
+				"Data": "Dl8DFk6eAwVPcmdvBk6GAa4BbmFtZS8DAwNpZC8DAwMP"
+			},
+			"2": {
+				"Kind": "state",
+				"Deps": [
+					1
+				],
+				"Data": "Dj8GrgFvcmdJZFRvT3JnPwMTLgMDXwMWTp4DBU9yZ28GToYBrgFuYW1lLwMDA2lkLwMDAw8="
+			},
+			"3": {
+				"Kind": "routine",
+				"Deps": [
+					2
+				],
+				"Data": "Do8BDjaDAZYBkAIvAABJbml0IQNkZXBsb3llcg=="
+			},
+			"4": {
+				"Kind": "routine",
+				"Deps": [
+					2
+				],
+				"Data": "Dp8BDvYD4wT2BI4GPw6wA28GfrYBjgJvcmdOYW1lLwMDA29yZ0lkLwMDA0FkZE9yZyEEaW52b2thYmxlrwIObs4BrgKeA/4D3gTOBa4GngcvAxYRAAEvAxYoAAAvAxYEAQAvAxZSAAABLwMWBAEBLwMWJAIBLwMWUgABAi8DFoACAC8DFlQCAQAvAxaBAgA="
+			},
+			"5": {
+				"Kind": "routine",
+				"Deps": [
+					2
+				],
+				"Data": "Dp8BDuYDgwWWBa4GPw7OAS8GXm9yZ0lkLwMDAy8Gfm9yZ05hbWUvAwMDR2V0T3JnTmFtZQVpbnZva2FibGWPAQ5uzgG+Aq4DLwMWgAAALwMWBAEALwMWUwAAAS8DFlEAAAAvAxYFAAA="
+			},
+			"6": {
+				"Kind": "routine",
+				"Deps": [
+					2
+				],
+				"Data": "Dp8BDqYHwwjWCO4JPw7OAS8GXm9yZ0lkLwMDAy8Gfm9yZ05hbWVfAxZOngMFT3JnbwZOhgGuAW5hbWUvAwMDaWQvAwMDD0dldE9yZ0J5SWQGaW52b2thYmxlbw5uzgG+Ai8DFoAAAC8DFgQBAC8DFlMAAAEvAxYFAAA="
+			}
+		},
+		"Callsites": {
+			"AddOrg!": {
+				"Ptr": 4,
+				"Kind": "invokable"
+			},
+			"GetOrgById": {
+				"Ptr": 6,
+				"Kind": "invokable"
+			},
+			"GetOrgName": {
+				"Ptr": 5,
+				"Kind": "invokable"
+			},
+			"Init!": {
+				"Ptr": 3,
+				"Kind": "deployer"
+			}
+		},
+		"Classdefs": {
+			"Org": {
+				"Ptr": 1
+			}
+		}
+	},
+	"CtxState": {
+		"Address": "0x3f58cf1bd5706f082df7a07e53f4f08ab8a59817fb1fb4b023df4cf80b555521",
+		"Datastore": {},
+		"LogicState": {
+			"0800003f58cf1bd5706f082df7a07e53f4f08ab8a59817fb1fb4b023df4cf80b555521": {
+				"03170a2e7597b7b7e3d84c05391d139a62b157e78786d8c082f29dcf4c111314": "Dm8GHdYC7QIxXwYlRoUBaWQGMW5hbWUGU2FydmEyXwYlRoUBaWQGMm5hbWUGYmhhdnlh"
+			}
+		},
+		"Spendable": {},
+		"Approvals": {},
+		"Lockups": {}
+	}
+}

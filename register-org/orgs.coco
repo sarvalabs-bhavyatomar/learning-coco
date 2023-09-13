@@ -1,0 +1,28 @@
+coco Orgs
+
+class Org:
+    field name String
+    field id String
+
+state persistent:
+    orgIdToOrg Map[String]Org
+
+endpoint deployer Init!():
+    pass
+
+endpoint invokable AddOrg!(orgName String, orgId String):
+    var newOrg Org
+    newOrg.name = orgName
+    newOrg.id = orgId
+
+    mutate orgIdToOrg <- Orgs.State.orgIdToOrg:
+        orgIdToOrg[orgId] = newOrg
+
+
+endpoint invokable GetOrgName(orgId String) -> (orgName String):
+    observe orgIdToOrg <- Orgs.State.orgIdToOrg:
+        yield orgName orgIdToOrg[orgId].name
+
+endpoint invokable GetOrgById(orgId String) -> (orgName Org):
+    observe orgNames <- Orgs.State.orgIdToOrg:
+        yield orgName orgNames[orgId]

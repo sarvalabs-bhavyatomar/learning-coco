@@ -1,0 +1,12 @@
+{
+	"Username": "bhavya",
+	"Address": "0x41d5f88db0abe51696e50e39e72c61ee75d05cf83a8a53e5e6c845025001bb0e",
+	"CtxState": {
+		"Address": "0x41d5f88db0abe51696e50e39e72c61ee75d05cf83a8a53e5e6c845025001bb0e",
+		"Datastore": {},
+		"LogicState": {},
+		"Spendable": {},
+		"Approvals": {},
+		"Lockups": {}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"Config": {
+		"BaseFuel": 10000,
+		"HexBig": true,
+		"HexBytes": true
+	},
+	"Sender": "bhavya",
+	"Receiver": "",
+	"Participants": {
+		"bhavya": "0x41d5f88db0abe51696e50e39e72c61ee75d05cf83a8a53e5e6c845025001bb0e"
+	},
+	"LogicAccounts": {
+		"Orgs": "0x0800003f58cf1bd5706f082df7a07e53f4f08ab8a59817fb1fb4b023df4cf80b555521"
+	}
+}
